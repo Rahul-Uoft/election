@@ -20,6 +20,19 @@ bibliography: references.bib
 
 library(tidyverse)
 library(palmerpenguins)
+
+library(boot)
+library(broom.mixed)
+library(collapse)
+library(dataverse)
+library(gutenbergr)
+library(janitor)
+library(knitr)
+library(marginaleffects)
+library(modelsummary)
+library(rstanarm)
+library(tidybayes)
+library(tidyverse)
 ```
 
 
