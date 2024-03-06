@@ -131,7 +131,7 @@ library(rstanarm)
 first_model <-
   readRDS(file = here::here("models/first_model.rds"))
 
-analysis_data <- arrow::read_parquet(here::here("data/analysis_data/ces2020.parquet"))
+
 
 
 ```
@@ -196,6 +196,14 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 #| fig-cap: "Examining how the model fits, and is affected by, the data"
 #| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
 
+analysis_data <- arrow::read_parquet(here::here("data/analysis_data/ces2020.parquet"))
+
+set.seed(853)
+
+analysis_data <- 
+  analysis_data |> 
+  slice_sample(n = 1000)
+
 pp_check(first_model) +
   theme_classic() +
   theme(legend.position = "bottom")
@@ -229,9 +237,6 @@ plot(first_model, "trace")
 plot(first_model, "rhat")
 
 
-
-modelplot(political_preferences, conf_level = 0.9) +
-  labs(x = "90 per cent credibility interval")
 ```
 
 
