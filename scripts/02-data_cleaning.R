@@ -8,7 +8,9 @@
 # Any other information needed? [...UPDATE THIS...]
 
 #### Workspace setup ####
+install.packages("arrow")
 library(tidyverse)
+library(arrow)
 
 #### Clean data ####
 ces2020 <-
@@ -56,4 +58,4 @@ ces2020 <-
   select(voted_for, gender, education)
 
 #### Save data ####
-write_csv(cleaned_data, "outputs/data/analysis_data.csv")
+write_parquet(ces2020, "data/analysis_data/ces2020.csv")
