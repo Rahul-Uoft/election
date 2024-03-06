@@ -14,7 +14,8 @@ library(rstanarm)
 library(arrow)
 
 #### Read data ####
-analysis_data <- read_parquet("data/analysis_data/ces2020.csv")
+set.seed(853)
+analysis_data <- read_parquet("data/analysis_data/ces2020.parquet")
 
 ### Model data ####
 first_model <-
