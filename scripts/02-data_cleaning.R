@@ -8,33 +8,33 @@
 # Any other information needed? [...UPDATE THIS...]
 
 #### Workspace setup ####
-install.packages("arrow")
+
 library(tidyverse)
 library(arrow)
 
 #### Clean data ####
-ces2020 <-
+ces2022 <-
   read_csv(
-    "ces2020.csv",
+    "data/raw_data/ces2022.csv",
     col_types =
       cols(
         "votereg" = col_integer(),
-        "CC20_410" = col_integer(),
-        "gender" = col_integer(),
+        "presvote20post" = col_integer(),
+        "gender4" = col_integer(),
         "educ" = col_integer()
       )
   )
 
-ces2020
+ces2022
 
-ces2020 <-
-  ces2020 |>
+ces2022 <-
+  ces2022 |>
   filter(votereg == 1,
-         CC20_410 %in% c(1, 2)) |>
+         presvote20post %in% c(1, 2)) |>
   mutate(
-    voted_for = if_else(CC20_410 == 1, "Biden", "Trump"),
+    voted_for = if_else(presvote20post == 1, "Biden", "Trump"),
     voted_for = as_factor(voted_for),
-    gender = if_else(gender == 1, "Male", "Female"),
+    gender = if_else(gender4 == 1, "Male", "Female"),
     education = case_when(
       educ == 1 ~ "No HS",
       educ == 2 ~ "High school graduate",
@@ -56,6 +56,6 @@ ces2020 <-
     )
   ) |>
   select(voted_for, gender, education)
-ces2020
+ces2022
 #### Save data ####
-write_parquet(ces2020, "data/analysis_data/ces2020.parquet")
+write_parquet(ces2022, "data/analysis_data/ces2022clean.parquet")
