@@ -15,7 +15,7 @@ library(arrow)
 
 #### Read data ####
 set.seed(853)
-analysis_data <- read_parquet("data/analysis_data/ces2020.parquet")
+analysis_data <- read_parquet("data/analysis_data/ces2022clean.parquet")
 
 ### Model data ####
 first_model <-
@@ -33,7 +33,7 @@ first_model <-
 #### Save model ####
 saveRDS(
   first_model,
-  file = "models/first_model.rds"
+  file = "models/first_model2022.rds"
 )
 
 
