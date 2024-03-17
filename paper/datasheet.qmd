@@ -3,9 +3,9 @@ title: "Datasheet for 'CES 2022 report'"
 author: 
   - Rahul Gopeesingh
 thanks: "Code and data are available at: https://github.com/Rahul-Uoft/election.git"
-date: "`r Sys.time()`"
-date-format: "D MMMM YYYY"
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+date: today
+date-format: long
+abstract: "This datasheet provides an analysis of the dataset used in the study. The dataset is the CES2022 report available at the Harvward dataverse. It can also be found in the references. Overall this dataset was collected in a thoughtful and professional manner."
 format: pdf
 number-sections: true
 bibliography: references.bib
