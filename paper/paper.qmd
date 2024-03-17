@@ -156,19 +156,19 @@ modelsummary::modelsummary(
 
 ## Female Prefereces
 
-We observe that females are 0.8 times as likely to vote for Trump as they are for Biden. This follows a trend that has been observed since the beginning of the 21st century, women prefer the democratic party.(CITE REPORT) This may be due to the history of the democratic party and its advocation for women-rights. It appears that the democratic party is the one that serves women best in terms of their economic interest. In fact the democratic party has paid a lot more attention to issues that directly pertain to women such as abortion and family leave than the republicans and there is evidence to suggest that this is a key part of its strategy. (CITE 2)
+We observe that females are 0.8 times as likely to vote for Trump as they are for Biden. This follows a trend that has been observed since the beginning of the 21st century, women prefer the democratic party.(@article1) This may be due to the history of the democratic party and its advocation for women-rights. It appears that the democratic party is the one that serves women best in terms of their economic interest. In fact the democratic party has paid a lot more attention to issues that directly pertain to women such as abortion and family leave than the republicans and there is evidence to suggest that this is a key part of its strategy. (@article2)
 
 ## Highly Educated People
 
-One of the most apparent outcomes of this model would be the likelihood of highly educated people to prefer voting for Biden over Trump. One cause of this can be the fact that college graduates are far more likely to self-identify as liberal.(CITE 3) It could also pertain to the way in which most colleges are structured. It is possible that the values taught there are aligned with those of the democrats and hence shape the thinking of these highly educated people in a way that increases their likelihood of voting for a specific candidate. 
+One of the most apparent outcomes of this model would be the likelihood of highly educated people to prefer voting for Biden over Trump. One cause of this can be the fact that college graduates are far more likely to self-identify as liberal.(@article3) It could also pertain to the way in which most colleges are structured. It is possible that the values taught there are aligned with those of the democrats and hence shape the thinking of these highly educated people in a way that increases their likelihood of voting for a specific candidate. 
 
-The proportion of graduates that make up the democratic voting pool has greatly increased over the last 20 years.(CITE 3)
+The proportion of graduates that make up the democratic voting pool has greatly increased over the last 20 years.(@article3)
 
 
 ## Political Strategy
-The most interesting part is how these observations apply to the political strategy of the two parties. Firstly, it was argued that the majority of females voting for the democrats were enough to sway the elections and therefore the main focus of the two parties, however this was disproven in 1980 and 1984 as the republican party won without fully closing the gender gap. They appealed to broad groups of women through issues that directly affected them and were not specific to women such as national security.(CITE 2)
+The most interesting part is how these observations apply to the political strategy of the two parties. Firstly, it was argued that the majority of females voting for the democrats were enough to sway the elections and therefore the main focus of the two parties, however this was disproven in 1980 and 1984 as the republican party won without fully closing the gender gap. They appealed to broad groups of women through issues that directly affected them and were not specific to women such as national security.(@article2)
 
-Additionally, with the increased amount of liberal, educated individuals arguing for various policies that inconvenience some working class individuals, it creates an opportunity for the republican party to increase its share of this demographic in an attempt to balance the disproportionality. An exaple of this may be the advocation for an environmentally friendly policy that negatively impacts the working class people in this field. 
+Additionally, with the increased amount of liberal, educated individuals arguing for various policies that inconvenience some working class individuals, it creates an opportunity for the republican party to increase its share of this demographic in an attempt to balance the disproportionality. An exaple of this may be the advocation for an environmentally friendly policy that negatively impacts the working class people in this field. (@article3)
 
 ## Weaknesses and next steps
 

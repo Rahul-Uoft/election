@@ -1,11 +1,9 @@
 #### Preamble ####
-# Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
-# License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Purpose: Cleans the raw data into a digestable format
+# Author: Rahul Gopeesingh
+# Date: 16 March 2024
+# Contact: rahul.gopeesingh@mail.utoronto.ca
+
 
 #### Workspace setup ####
 
@@ -56,6 +54,9 @@ ces2022 <-
     )
   ) |>
   select(voted_for, gender, education)
-ces2022
+
 #### Save data ####
 write_parquet(ces2022, "data/analysis_data/ces2022clean.parquet")
+
+
+
