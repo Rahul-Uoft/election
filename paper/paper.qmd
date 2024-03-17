@@ -6,7 +6,7 @@ author:
 thanks: "Code and data are available at:https://github.com/Rahul-Uoft/election.git"
 date: today
 date-format: long
-abstract: "There are many factors that can influence someone's voting preference. Two of which that seem very relevant are a person's gender as well as their education level. This paper uses a logistic regression to investigate the relattionship between these factors and a person's political preference"
+abstract: "There are many factors that can influence someone's voting preference. Two of which that seem very relevant are a person's gender as well as their education level. This paper uses a logistic regression to investigate the relattionship between these factors and a person's political preference. We found that both females and highly educated people are significantly more likely to vote for Biden than for Trump"
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -17,8 +17,8 @@ bibliography: references.bib
 #| warning: false
 #| message: false
 
-library(tidyverse)
 
+library(tidyverse)
 
 library(boot)
 library(broom.mixed)
@@ -38,9 +38,13 @@ library(arrow)
 
 # Introduction
 
-You can and should cross-reference sections and sub-sections. We use @citeR and @rohan.
+In this paper we investigate voter preferences of different demographics. One major factor that is believed to influence a persons political preferences is their gender. This is largely due to the gender gap and different governments taking different actions with respect to these differences. The next we look at is the highest education reveived in order to predict their political preference.
 
-The remainder of this paper is structured as follows. @sec-data....
+Since we want to investigate how these factors affect people presently, we look at the latest available dataset(2022) of the 2020 election between Biden and Trump. Here we are trying to estimate the log-odds that someone is more likely to vote for Trump than Biden. 
+
+We use @citeR and @tidy in order to conduct this analysis
+
+The remainder of this paper is structured as follows. @sec-data discusses the data, how it was collected and the purpose in which we use this data. It also gives a brief analysis of the data. @sec-mod walks through the logistic regression model used and the justification for using this logistic regression. @sec-res shows the results and an intepretation of what they mean. Finally, @sec-dis discusses the potential reasons behind these results and their implications. 
 
 
 
@@ -62,8 +66,8 @@ The data is summarized in @fig-dataexplore.
 #| label: fig-dataexplore
 #| tbl-cap: "The distribution of presidential preferences, by gender, and highest education"
 #| warning: false
-
-ces2022 <- read_csv("/Users/rahulgopeesingh/Documents/election/data/raw_data/ces2022.csv")
+setwd("/Users/rahulgopeesingh/Documents/election")
+ces2022 <- read_csv("election/data/raw_data/ces2022.csv")
 ces2022graph <-
   ggplot(ces2022, aes(x = education, fill = voted_for)) +
   stat_count(position = "dodge") +
@@ -82,7 +86,7 @@ ces2022graph <-
 ```
 
 
-# Model
+# Model {#sec-mod}
 
 The goal of our modelling strategy is twofold. Firstly,...
 
@@ -114,7 +118,7 @@ It is also important to note that we only consider votes for Biden and Trump as 
 
 
 
-# Results
+# Results {#sec-res}
 
 Our results are summarized in @tbl-modelresults. This table includes values for the intercept under various conditions as well as their error value.(the value in parentheses below each intercept.) Each value of the intercept indicates the estimated log-odds of the outocme variable. What this means is that the log of the outcome is given as the intercept. Therefore by taking the exponential function we can predict the likelihood of a certain outcome given a certain variable. For instance, we can see the intercept for Post-grads were -0.94. taking the exponential function of this gives a result of 0.39. This means that a random post-grad is 0.39 times as likely to vote for trump as they are for Biden. We are not concerned with the second half of the table. 
 
@@ -153,7 +157,7 @@ modelsummary::modelsummary(
 
 \newpage
 
-# Discussion
+# Discussion {#data-dis}
 
 ## Female Prefereces
 
@@ -191,9 +195,9 @@ One way in which this can be analyzed is by considering someones thoughts on dif
 
 ## Posterior predictive check
 
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
+In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows the outcome variable with simulated variable from the posterior distribution. 
 
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
+In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows how much the estimates change once the data is taken into account. 
 
 ```{r}
 #| eval: true
@@ -227,9 +231,9 @@ posterior_vs_prior(first_model) +
 
 ## Diagnostics
 
-@fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
+@fig-stanareyouokay-1 is a trace plot. It shows lines that appear to bounce around and are horizontal. This suggests nothing wrong with the model we used.
 
-@fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
+@fig-stanareyouokay-2 is a Rhat plot. It shows every value close to 1 and nothing greater than 1.1 This suggests the model we used is fine. 
 
 ```{r}
 #| echo: false
