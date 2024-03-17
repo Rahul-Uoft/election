@@ -1,13 +1,12 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Election Preferences in 2022 based on Gender and Education"
+
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: LINK."
+  - Rahul Gopeesingh
+thanks: "Code and data are available at:https://github.com/Rahul-Uoft/election.git"
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "There are many factors that can influence someone's voting preference. Two of which that seem very relevant are a person's gender as well as their education level. This paper uses a logistic regression to investigate the relattionship between these factors and a person's political preference"
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -47,7 +46,39 @@ The remainder of this paper is structured as follows. @sec-data....
 
 # Data {#sec-data}
 
+## Data Source
 
+The data used in this paper is contained in the Cooperative Election Study 2022.(CITE) This study examines American's views on representatives, electoral experiences and elections. This data is available for free at the Harvard University Dataverse.
+
+Surverys were used to collect data from a sample large enough that it may be assumed is representative of the entire American population. Importantly, this covered a wide range of constituencies and the sample was large enough such that the data for each constituency is enough to assume that it is representative of its whole.(CITE CES REPORT) There were 60 research teams, and each purchased 1000 surverys to hand out to their respective constituencies. Sample matching was used to pick the 1000 people in which the surverys were to be administered. This is a process which is not truly random but has the benefit of being practical. In a truly randomly selected group, the contact information for some may not be readily available and therefore makes the data collectin process much more difficult. Sample matching involves selecting a sample at random, and anyone who does not fit the criteria to proceed(in this case having your contact information available) is then replaced by a person in the pool who is believed to have similar characteristics. 
+
+## Data Analysis
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-dataexplore
+#| tbl-cap: "The distribution of presidential preferences, by gender, and highest education"
+#| warning: false
+
+ces2022 <- read_csv("/Users/rahulgopeesingh/Documents/election/data/raw_data/ces2022.csv")
+ces2022graph <-
+  ggplot(ces2022, aes(x = education, fill = voted_for)) +
+  stat_count(position = "dodge") +
+  facet_wrap(facets = vars(gender)) +
+  theme_minimal() +
+  labs(
+    x = "Highest education",
+    y = "Number of respondents",
+    fill = "Voted for"
+  ) +
+  coord_flip() +
+  scale_fill_brewer(palette = "Set1") +
+  theme(legend.position = "bottom")
+
+
+```
 
 
 # Model
