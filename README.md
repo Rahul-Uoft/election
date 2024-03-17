@@ -23,4 +23,4 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of the LLM ChatGPT. The entire chat history is available in inputs/llms/usage.txt.
+Aspects of the code were written with the help of the LLM ChatGPT. The entire chat history is available in inputs/llms/usage.txt. The link is available here https://chat.openai.com/share/f6ba79d7-ea8d-4478-abce-a599be279222
