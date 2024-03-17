@@ -54,6 +54,7 @@ Surverys were used to collect data from a sample large enough that it may be ass
 
 ## Data Analysis
 
+The data is summarized in @fig-dataexplore.
 
 ```{r}
 #| echo: false
@@ -105,14 +106,17 @@ We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use
 
 ### Model justification
 
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
+A logistic regression model was used in this analysis as the outcome variable is Binary. This is because we are considering whether someone prefers Biden or Trump. Whenever the outcome variable is Binary, a logistic regression model makes sense to help us understand it more. We used the default priors for our input variables. 
 
-We can use maths by including latex between dollar signs, for instance $\theta$.
+A logistic regression model works by instead of considering an error value, which is done in linear regression, it considers a distribution for each of the inputs. The variability of these distributions inherently create the variability of the outcome which is associated to the error value we get in linear regression. The main advantage to this comes from the assumption made in linear regression models in which the error value is assumed to cancel out with each other(forming a normal distribution)
+
+It is also important to note that we only consider votes for Biden and Trump as voting for any other candidate is generally seen as giving up one's vote as the other parties are extremely unlikely to win. Hence we can consider this Binary observation of Biden vs Trump. 
+
 
 
 # Results
 
-Our results are summarized in @tbl-modelresults.
+Our results are summarized in @tbl-modelresults. This table includes values for the intercept under various conditions as well as their error value.(the value in parentheses below each intercept.) Each value of the intercept indicates the estimated log-odds of the outocme variable. What this means is that the log of the outcome is given as the intercept. Therefore by taking the exponential function we can predict the likelihood of a certain outcome given a certain variable. For instance, we can see the intercept for Post-grads were -0.94. taking the exponential function of this gives a result of 0.39. This means that a random post-grad is 0.39 times as likely to vote for trump as they are for Biden. We are not concerned with the second half of the table. 
 
 ```{r}
 #| echo: false
@@ -150,24 +154,35 @@ modelsummary::modelsummary(
 
 # Discussion
 
-## First discussion point {#sec-first-point}
+## Female Prefereces
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+We observe that females are 0.8 times as likely to vote for Trump as they are for Biden. This follows a trend that has been observed since the beginning of the 21st century, women prefer the democratic party.(CITE REPORT) This may be due to the history of the democratic party and its advocation for women-rights. It appears that the democratic party is the one that serves women best in terms of their economic interest. In fact the democratic party has paid a lot more attention to issues that directly pertain to women such as abortion and family leave than the republicans and there is evidence to suggest that this is a key part of its strategy. (CITE 2)
 
-## Second discussion point
+## Highly Educated People
 
-## Third discussion point
+One of the most apparent outcomes of this model would be the likelihood of highly educated people to prefer voting for Biden over Trump. One cause of this can be the fact that college graduates are far more likely to self-identify as liberal.(CITE 3) It could also pertain to the way in which most colleges are structured. It is possible that the values taught there are aligned with those of the democrats and hence shape the thinking of these highly educated people in a way that increases their likelihood of voting for a specific candidate. 
+
+The proportion of graduates that make up the democratic voting pool has greatly increased over the last 20 years.(CITE 3)
+
+
+## Political Strategy
+The most interesting part is how these observations apply to the political strategy of the two parties. Firstly, it was argued that the majority of females voting for the democrats were enough to sway the elections and therefore the main focus of the two parties, however this was disproven in 1980 and 1984 as the republican party won without fully closing the gender gap. They appealed to broad groups of women through issues that directly affected them and were not specific to women such as national security.(CITE 2)
+
+Additionally, with the increased amount of liberal, educated individuals arguing for various policies that inconvenience some working class individuals, it creates an opportunity for the republican party to increase its share of this demographic in an attempt to balance the disproportionality. An exaple of this may be the advocation for an environmentally friendly policy that negatively impacts the working class people in this field. 
 
 ## Weaknesses and next steps
 
-Weaknesses and next steps should also be included.
+A major weakness of this analysis is that it assumes that Biden and Trump are choices made because of preferences. However, as explained in the model section, these are the only rational choices as any other choice seems to be irrelevant. Therefore someone may vote for a candidate not because they resonate with their political ideals, but rather because they are the 'lesser of two evils.' 
+
+One way in which this can be analyzed is by considering someones thoughts on different administrations throughout the years or using a benchmark to determine how much they genuinely believe in the political ideals of a certain party.
 
 \newpage
 
-\appendix
 
 # Appendix {-}
 
+
+\appendix
 
 # Additional data details
 
