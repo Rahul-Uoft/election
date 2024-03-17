@@ -60,9 +60,7 @@ Surverys were used to collect data from a sample large enough that it may be ass
 
 # Model {#sec-mod}
 
-The goal of our modelling strategy is twofold. Firstly,...
-
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
+We use the Bayesian Analysis model to conduct this by defining a linear relationship between our outcome variable and our predictor variables. These predictor variables are then assigned a distribution and we use these to predict the outcome variable. 
 
 ## Model set-up
 
@@ -160,8 +158,6 @@ One way in which this can be analyzed is by considering someones thoughts on dif
 
 
 \appendix
-
-# Additional data details
 
 # Model details {#sec-model-details}
 
